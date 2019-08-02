@@ -1,0 +1,15 @@
+<h1>Current Projects</h1>
+
+<% if @projects.any? %>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><a href="/projects/<%= project.id %>"><%=project.name%></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No current projects</p>
+<% end %>
+
+<a href="/projects/new">Add a Project</a>
+<br><br>
+<a href="/tracker">Back to Home</a>

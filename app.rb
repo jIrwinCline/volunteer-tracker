@@ -13,5 +13,35 @@ get('/') do
 end
 
 get('/tracker') do
-  erb(:albums)
+  erb(:tracker)
+end
+
+get('/projects') do
+  @projects = Project.all
+  erb(:projects)
+end
+
+get('/projects/new') do
+  erb(:new_project)
+end
+
+post('/projects') do
+  name = params[:project_name]
+  project = Project.new({:name => name, :id => nil})
+  project.save()
+  redirect to('/projects')
+end
+
+get('/projects/:id') do
+  @project = Project.find(params[:id].to_i)
+  erb(:project)
+end
+
+
+
+post('/projects/:id/volunteers') do
+  @project = Project.find(params[:id].to_i)
+  volunteer = Volunteer.new({:name => params[:volunteer_name], :project_id => @project.id, :id => nil})
+  volunteer.save()
+  erb(:project)
 end
