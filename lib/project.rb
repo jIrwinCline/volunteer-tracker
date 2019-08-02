@@ -12,7 +12,8 @@ class Project
   end
 
   def save
-
+    result = DB.exec("INSERT INTO projects (name) VALUES ('#{@name}') RETURNING id;")
+    @id = result.first.fetch("id").to_i
   end
 
   def ==(project_to_compare)
@@ -41,6 +42,12 @@ class Project
     name = result.first.fetch("name")
     name
   end
+
+  def self.id
+    result = DB.exec("SELECT * FROM projects WHERE id = #{@id}")
+    id = result.first.fetch("id").to_i
+  end
+
 
   # def volunteers
   #   Volunteer.find_by_volunteer(self.id)
