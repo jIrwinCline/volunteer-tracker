@@ -20,7 +20,7 @@ class Project
 
   def save
     result = DB.exec("INSERT INTO projects (name) VALUES ('#{@name}') RETURNING id;")
-    @id = result.first.fetch("id").to_i
+    @id = result.first().fetch("id").to_i
   end
 
   def ==(project_to_compare)
@@ -34,7 +34,7 @@ class Project
   def self.find(id)
     project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
     name = project.fetch("name")
-    id = project.fetch("id")
+    id = project.fetch("id").to_i
     Project.new({:name => name, :id => id})
   end
 
