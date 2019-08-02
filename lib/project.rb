@@ -36,6 +36,12 @@ class Project
     DB.exec("DELETE FROM projects WHERE id = #{@id};")
   end
 
+  def self.name
+    result = DB.exec("SELECT * FROM projects WHERE id = #{@id};")
+    name = result.first.fetch("name")
+    name
+  end
+
   # def volunteers
   #   Volunteer.find_by_volunteer(self.id)
   # end

@@ -1,12 +1,12 @@
 require "spec_helper"
 
 describe Project do
-  # describe '#name' do
-  #   it 'returns the project name' do
-  #     project = Project.new({:name => 'Teaching Kids to Code', :id => nil})
-  #     expect(project.name).to eq 'Teaching Kids to Code'
-  #   end
-  # end
+  describe '#name' do
+    it 'returns the project name' do
+      project = Project.new({:name => 'Teaching Kids to Code', :id => nil})
+      expect(project.name).to eq 'Teaching Kids to Code'
+    end
+  end
   #
   # context '#id' do
   #   it 'returns the id of the project before saving project' do
