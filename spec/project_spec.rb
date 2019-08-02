@@ -41,15 +41,15 @@ describe Project do
       expect(Project.all).to eq [project1, project2]
     end
   end
-  #
-  # describe '#save' do
-  #   it 'saves a project to the database' do
-  #     project = Project.new({:name => 'Teaching Kids to Code', :id => nil})
-  #     project.save
-  #     expect(Project.all).to eq [project]
-  #   end
-  # end
-  #
+
+  describe '#save' do
+    it 'saves a project to the database' do
+      project = Project.new({:name => 'Teaching Kids to Code', :id => nil})
+      project.save
+      expect(Project.all).to eq [project]
+    end
+  end
+
   # describe '.find' do
   #   it 'returns a project by id' do
   #     project1 = Project.new({:name => 'Teaching Kids to Code', :id => nil})
