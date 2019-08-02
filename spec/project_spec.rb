@@ -13,7 +13,7 @@ describe Project do
       project = Project.new({:name => 'Teaching Kids to Code', :id => nil})
       expect(project.id).to eq nil
     end
-  
+
     it 'returns the id of the project after saving project' do
       project = Project.new({:name => 'Teaching Kids to Code', :id => nil})
       project.save
@@ -29,19 +29,18 @@ describe Project do
     end
   end
 
-  # context '.all' do
-  #   it 'is empty to start' do
-  #     expect(Project.all).to eq []
-  #   end
-  # end
-  #   it 'returns all projects' do
-  #     project1 = Project.new({:name => 'Teaching Kids to Code', :id => nil})
-  #     project1.save
-  #     project2 = Project.new({:name => 'Teaching Ruby to Kids', :id => nil})
-  #     project2.save
-  #     expect(Project.all).to eq [project1, project2]
-  #   end
-  # end
+  context '.all' do
+    it 'is empty to start' do
+      expect(Project.all).to eq []
+    end
+    it 'returns all projects' do
+      project1 = Project.new({:name => 'Teaching Kids to Code', :id => nil})
+      project1.save
+      project2 = Project.new({:name => 'Teaching Ruby to Kids', :id => nil})
+      project2.save
+      expect(Project.all).to eq [project1, project2]
+    end
+  end
   #
   # describe '#save' do
   #   it 'saves a project to the database' do

@@ -8,7 +8,14 @@ class Project
   end
 
   def self.all
-
+    results = DB.exec("SELECT * FROM projects;")
+    projects = []
+    results.each do |project|
+      name = project.fetch("name")
+      id = project.fetch("id")
+      projects.push(Project.new({:name => name, :id => id}))
+    end
+    projects
   end
 
   def save
