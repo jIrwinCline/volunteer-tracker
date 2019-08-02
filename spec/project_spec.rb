@@ -50,15 +50,15 @@ describe Project do
     end
   end
 
-  # describe '.find' do
-  #   it 'returns a project by id' do
-  #     project1 = Project.new({:name => 'Teaching Kids to Code', :id => nil})
-  #     project1.save
-  #     project2 = Project.new({:name => 'Teaching Ruby to Kids', :id => nil})
-  #     project2.save
-  #     expect(Project.find(project1.id)).to eq project1
-  #   end
-  # end
+  describe '.find' do
+    it 'returns a project by id' do
+      project1 = Project.new({:name => 'Teaching Kids to Code', :id => nil})
+      project1.save
+      project2 = Project.new({:name => 'Teaching Ruby to Kids', :id => nil})
+      project2.save
+      expect(Project.find(project1.id)).to eq project1
+    end
+  end
   #
   # describe '#volunteers' do
   #   it 'returns all volunteers for a specific project' do
