@@ -59,6 +59,7 @@ class Project
   end
 
   def volunteers
+    volunteers = []
     if Volunteer.all == []
       return false
     else
