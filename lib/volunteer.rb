@@ -82,7 +82,7 @@ class Volunteer
     results.each() do |volunteer|
       name = volunteer.fetch("name")
       id = volunteer.fetch("id")
-      vulunteers.push(Volunteer.new({:name => name, :project_id => proj_id, :id => id }))
+      volunteers.push(Volunteer.new({:name => name, :project_id => proj_id, :id => id }))
     end
     volunteers
   end
