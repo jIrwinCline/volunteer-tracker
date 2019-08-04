@@ -29,6 +29,7 @@ post('/projects') do
   name = params[:project_name]
   project = Project.new({:name => name, :id => nil})
   project.save()
+
   redirect to('/projects')
 end
 
@@ -64,6 +65,7 @@ post('/projects/:id/volunteers') do
   @project = Project.find(params[:id].to_i)
   volunteer = Volunteer.new({:name => params[:volunteer_name], :project_id => @project.id, :id => nil})
   volunteer.save()
+  # binding.pry
   erb(:project)
 end
 

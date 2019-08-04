@@ -59,12 +59,7 @@ class Project
   end
 
   def volunteers
-    volunteers = []
-    if Volunteer.all == []
-      return false
-    else
-      Volunteer.find_by_volunteer(self.id)
-    end
+    Volunteer.find_by_volunteer(self.id)
   end
 
 
