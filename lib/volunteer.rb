@@ -50,9 +50,9 @@ class Volunteer
     end
   end
 
-  def update(attributes)
-    @name = attributes[:name]
-    @project_id = attributes[:project_id]
+  def update(name, project_id)
+    @name = name
+    @project_id = project_id
     DB.exec("UPDATE volunteers SET name = '#{@name}', project_id = #{@project_id} WHERE id = #{@id};")
   end
 
