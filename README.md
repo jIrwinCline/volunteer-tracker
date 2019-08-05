@@ -6,16 +6,17 @@
 
 ## Description
 
-_a program that...._
+_a sinatra webpage that allows a nonprofit employee to create and edit current projects and volunteers_
 
 ## Specs
 
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
 
-||||
+|As a non-profit employee, I want to view, add, update and delete projects.|enter "Building contruction"|shows "building contruction"|
 
-||||
+|As a non-profit employee, I want to view and add volunteers| enter "volunteer 1"|shows "Volunteer 1"|
+
 
 ## Setup/Installation Requirements
 
@@ -23,6 +24,9 @@ _a program that...._
 * run lib/app.rb as a script
 * navigate website
 
+## known bugs
+* issue on volunteer.erb "back to project" Link
+* delete project issue
 
 ## Link to GitHub Pages
 
