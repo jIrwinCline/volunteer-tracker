@@ -45,7 +45,8 @@ end
 
 patch('/projects/:id') do
   @project = Project.find(params[:id].to_i)
-  @project.update(params[:name])
+  # binding.pry
+  @project.update(params[:name], params[:id])
   redirect to('/projects')
 end
 

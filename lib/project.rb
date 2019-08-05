@@ -33,13 +33,18 @@ class Project
 
   def self.find(id)
     project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
-    name = project.fetch("name")
-    id = project.fetch("id").to_i
-    Project.new({:name => name, :id => id})
+    if project
+      name = project.fetch("name")
+      id = project.fetch("id").to_i
+      Project.new({:name => name, :id => id})
+    else
+      nil
+    end
   end
 
-  def update(attributes)
-    @name = attributes[:name]
+  def update(name, id)
+    @name = name
+    @id = id
     DB.exec("UPDATE projects SET name = '#{@name}' WHERE id = #{@id};")
   end
 
